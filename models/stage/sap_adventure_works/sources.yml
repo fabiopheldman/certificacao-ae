@@ -1,0 +1,259 @@
+
+version: 2
+
+sources:
+
+  - name: sap_adw
+    description: Fonte da base de dados Adventure Works.
+    schema: sap_adw 
+    tables:
+
+      - name: customer  
+        description: Tabela com informações de clientes da Adventure Works.
+        columns:
+          - name: customerid
+            description: Coluna com ID/chave primária dos clientes.
+            tests:
+              - unique
+              - not_null
+
+          - name: personid
+            description: Coluna com Foreign Key que estabelece referência à tabela Person.  
+
+          - name: storeid
+            description: Coluna com Foreign Key que estabelece referência à tabela Store.  
+
+          - name: territoryid
+            description: Coluna com Foreign Key que estabelece referência à tabela Sales Territory.  
+                  
+      
+      - name: person  
+        description: Tabela com informações pessoais como nome e sobrenome de clientes e funcionários da Adventure Works.
+        columns:
+          - name: businessentityid
+            description: Coluna com ID/chave primária dos clientes/funcionários.
+            tests:
+              - unique
+              - not_null
+          
+          - name: firstname
+            description: Coluna com nome dos clientes/funcionários.
+
+          - name: lastname
+            description: Coluna com sobrenome dos clientes/funcionários.
+
+      - name: salesorderheadersalesreason  
+        description: Tabela com informações dos motivos de vendas das ordens de venda Adventure Works.
+        columns:
+          - name: salesreasonid
+            description: Coluna com ID/chave primária dos motivos de venda.
+            tests:
+              - not_null
+
+          - name: salesorderid
+            description: Coluna com Foreign Key que estabelece referência à tabela 'salesorderheader'.
+
+      - name: salesreason  
+        description: Tabela complementar à "salesorderheadersalesreason" com a descrição dos motivos de vendas das ordens de venda Adventure Works.
+        columns:
+          - name: salesreasonid
+            description: Coluna com ID/chave primária dos motivos de venda.
+            tests:
+              - unique
+              - not_null
+              
+          - name: name
+            description: Coluna com a descrição do motivo de venda.
+
+          - name: reasontype
+            description: Coluna com a classificação/tipo de venda.
+
+
+      - name: salesperson  
+        description: Tabela com informações dos vendedores da Adventure Works.
+        columns:
+          - name: businessentityid
+            description: Coluna com ID/chave primária dos vendedores.
+            tests:
+              - unique
+              - not_null
+      
+      - name: employee  
+        description: Tabela com informações dos funcionários da Adventure Works.
+        columns:
+          - name: businessentityid
+            description: Coluna com ID/chave primária dos funcionários.
+            tests:
+              - unique
+              - not_null
+          
+          - name: jobtitle
+            description: Coluna com cargo dos funcionários.
+
+          - name: gender
+            description: Coluna com descrição do sexo dos funcionários.
+
+          - name: hiredate
+            description: Coluna com data de contratação dos funcionários.
+
+      - name: creditcard  
+        description: Tabela com informações dos cartões de crédito utilizados nas vendas.
+        columns:
+          - name: creditcardid
+            description: Coluna com ID/chave primária dos cartões de crédito.
+            tests:
+              - unique
+              - not_null
+
+          - name: cardtype
+            description: Coluna com o tipo dos cartões de crédito.
+
+      - name: product  
+        description: Tabela com informações dos produtos vendidos na Adventure Works.
+        columns:
+          - name: productid
+            description: Coluna com ID/chave primária dos produtos.
+            tests:
+              - unique
+              - not_null
+
+          - name: name
+            description: Coluna com a descrição do produto.
+
+          - name: productnumber
+            description: Coluna com o número do produto.
+
+          - name: color
+            description: Coluna com a cor do produto.
+
+          - name: size
+            description: Coluna com o tamanho do produto.
+
+      - name: salesorderdetail  
+        description: Tabela com detalhes das vendas na Adventure Works, complementar à tabela salesorderheader.
+        columns:
+          - name: salesorderid
+            description: Coluna com ID/chave primária das vendas.
+            tests:
+              - not_null
+          
+          - name: salesorderdetailid
+            description: Coluna incremental com produto vendido.
+            tests:
+              - unique
+              - not_null
+
+          - name: orderqty
+            description: Quantidade de itens vendidos.
+          
+          - name: productid
+            description: Coluna com Foreign Key que estabelece referência à tabela 'products'.
+
+          - name: unitprice
+            description: Coluna com preço unitário dos produtos.
+      
+      - name: salesorderheader  
+        description: Tabela com informações das vendas na Adventure Works.
+        columns:
+          - name: salesorderid
+            description: Coluna com ID/chave primária das vendas.
+            tests:
+              - unique
+              - not_null
+
+          - name: customerid
+            description: Coluna com Foreign Key que estabelece referência à tabela 'customer' para informar dados do cliente.
+          
+          - name: salespersonid
+            description: Coluna com Foreign Key que estabelece referência à tabela 'salesperson' para informar dados do vendedor.
+
+          - name: territoryid
+            description: Coluna com Foreign Key que estabelece referência à tabela 'territory' para informar dados da região.
+
+          - name: billtoaddressid
+            description: Coluna com Foreign Key que estabelece referência à tabela 'address' para informar endereço da conta.
+
+          - name: shiptoaddressid
+            description: Coluna com Foreign Key que estabelece referência à tabela 'address' para informar endereço de entrega.
+
+          - name: shipmethodid
+            description: Coluna com Foreign Key que estabelece referência à tabela 'shipmethod' para informar dados da entrega .
+
+          - name: creditcardid
+            description: CColuna com Foreign Key que estabelece referência à tabela 'creditcard' para informar dados do cartão de crédito utilizado.
+          
+          - name: currencyrateid
+            description: Coluna com Foreign Key que estabelece referência à tabela 'currencyrate' para informar dados de taxa de câmbio.
+
+          - name: orderdate
+            description: Coluna com informação de data de venda.
+
+          - name: duedate
+            description: Coluna com informação de data de vencimento.
+
+          - name: shipdate
+            description: Coluna com informação de data de envio do pedido.
+
+          - name: subtotal
+            description: Coluna com informação do total da ordem.
+
+          - name: taxamt
+            description: Coluna com informação de taxa da ordem.
+
+          - name: freight
+            description: Coluna com informação de peso dos produtos.
+
+          - name: totaldue
+            description: Coluna com informação do total devido.
+          
+      - name: address  
+        description: Tabela com informações de endereço na Adventure Works.
+        columns:
+          - name: addressid
+            description: Coluna com ID/chave primária de endereços.
+            tests:
+              - unique
+              - not_null
+
+          - name: stateprovinceid
+            description: Coluna com Foreign Key que estabelece referência à tabela 'stateprovince' para informar dados de estado (território).
+            
+          - name: addressline1
+            description: Coluna com informação de endereços.
+
+          - name: city
+            description: Coluna com informação de cidades.
+
+      - name: stateprovince  
+        description: Tabela com informações de estado (território) na Adventure Works.
+        columns:
+          - name: stateprovinceid
+            description: Coluna com ID/chave primária de estados.
+            tests:
+              - unique
+              - not_null
+
+          - name: territoryid
+            description: Coluna com Foreign Key que estabelece referência à tabela 'territory' para informar dados de território.
+
+          - name: stateprovincecode
+            description: Coluna com código do estado.
+          
+          - name: countryregioncode
+            description: Coluna com código do país.
+
+          - name: name
+            description: Coluna com nome do estado.
+          
+      - name: countryregion  
+        description: Tabela com informações de estado (território) na Adventure Works.
+        columns:
+          - name: countryregioncode
+            description: Coluna com ID/chave primária de países.
+            tests:
+              - unique
+              - not_null
+
+          - name: name
+            description: Coluna com nome dos países.
+  
