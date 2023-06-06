@@ -7,7 +7,7 @@ WITH
     , renomear AS (
         SELECT	
             CAST(salesorderid AS INT) AS id_ordem_venda	
-            ,CAST(salesreasonid AS STRING) AS id_motivo_venda		
+            ,CAST(salesreasonid AS INT) AS id_motivo_venda		
         FROM fonte_ordens_motivo_vendas
     )
 

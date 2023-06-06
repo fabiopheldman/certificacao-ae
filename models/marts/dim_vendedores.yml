@@ -1,0 +1,20 @@
+version: 2
+models:
+  - name: dim_vendedores
+    description: Essa é a dimensão com dados de vendedores.
+    columns:
+      - name: id_vendedor
+        description: Coluna com chave primária da tabela que referencia o vendedor.
+        tests:
+          - unique
+          - not_null
+      - name: vendedor_nome
+        description: Coluna com descrição do nome do vendedor.
+      - name: funcionario_funcao
+        description: Coluna com descrição do cargo.
+      - name: funcionario_sexo
+        description: Coluna com descrição do sexo do vendedor.
+      - name: funcionario_data_contratacao
+        description: Coluna com data de contratação do vendedor.
+
+  

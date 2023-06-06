@@ -1,0 +1,30 @@
+version: 2
+models:
+  - name: dim_localizacoes
+    description: Essa é a dimensão com dados de localizações.
+    columns:
+      - name: id_endereco
+        description: Coluna com chave primária da tabela que referencia o endereço.
+        tests:
+          - unique
+          - not_null
+      - name: endereco
+        description: Coluna com descrição do endereço.
+      - name: cidade
+        description: Coluna com descrição da cidade.
+      - name: cod_estado
+        description: Coluna com descrição do código do estado.
+      - name: cod_pais
+        description: Coluna com descrição do código do país.
+      - name: estado
+        description: Coluna com descrição do estado.
+      - name: pais
+        description: Coluna com descrição do país.
+
+            				
+            
+            			
+            					
+            
+            
+        

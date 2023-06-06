@@ -1,0 +1,12 @@
+version: 2
+models:
+  - name: dim_clientes
+    description: Essa é a dimensão com dados de clientes.
+    columns:
+      - name: id_cliente
+        description: Coluna com chave primária da tabela que referencia o cliente.
+        tests:
+          - unique
+          - not_null
+      - name: nome_cliente
+        description: Coluna com nome do cliente.
