@@ -1,0 +1,17 @@
+version: 2
+models:
+  - name: dim_motivos_venda
+    description: Essa é a dimensão com dados de motivos e tipos de venda.
+    columns:
+      - name: id_ordem_venda
+        description: Coluna com chave primária da tabela que referencia a ordem de venda.
+        tests:
+          - not_null
+      - name: motivo_venda
+        description: Coluna com descrição do motivo da venda.
+      - name: tipo_venda
+        description: Coluna com descrição do tipo de venda.
+
+        
+        
+        

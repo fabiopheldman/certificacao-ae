@@ -6,8 +6,8 @@ WITH
 
     , renomear AS (
         SELECT
-            CAST(countryregioncode AS INT) AS id_pais
-            ,CAST(name AS INT) AS pais	
+            CAST(countryregioncode AS STRING) AS cod_pais
+            ,CAST(name AS STRING) AS pais	
         FROM fonte_paises
     )
 

@@ -1,0 +1,18 @@
+version: 2
+models:
+  - name: dim_produtos
+    description: Essa é a dimensão com dados de produtos.
+    columns:
+      - name: id_produto
+        description: Coluna com chave primária da tabela que referencia o produto.
+        tests:
+          #- unique
+          - not_null
+      - name: produto_nome
+        description: Coluna com nome do produto.
+      - name: produto_numero
+        description: Coluna com o número do produto.
+      - name: produto_cor
+        description: Coluna com a cor do produto.
+      - name: produto_tamanho
+        description: Coluna com o tamanho do produto.

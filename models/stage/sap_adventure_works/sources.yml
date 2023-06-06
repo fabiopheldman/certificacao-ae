@@ -16,15 +16,12 @@ sources:
             tests:
               - unique
               - not_null
-
           - name: personid
-            description: Coluna com Foreign Key que estabelece referência à tabela Person.  
-
+            description: Coluna com Foreign Key que estabelece referência à tabela Person para informar dados de pessoas.  
           - name: storeid
-            description: Coluna com Foreign Key que estabelece referência à tabela Store.  
-
+            description: Coluna com Foreign Key que estabelece referência à tabela Store para informar dados de lojas.  
           - name: territoryid
-            description: Coluna com Foreign Key que estabelece referência à tabela Sales Territory.  
+            description: Coluna com Foreign Key que estabelece referência à tabela Sales Territory para informar dados de território. 
                   
       
       - name: person  
@@ -34,11 +31,9 @@ sources:
             description: Coluna com ID/chave primária dos clientes/funcionários.
             tests:
               - unique
-              - not_null
-          
+              - not_null     
           - name: firstname
             description: Coluna com nome dos clientes/funcionários.
-
           - name: lastname
             description: Coluna com sobrenome dos clientes/funcionários.
 
@@ -49,9 +44,8 @@ sources:
             description: Coluna com ID/chave primária dos motivos de venda.
             tests:
               - not_null
-
           - name: salesorderid
-            description: Coluna com Foreign Key que estabelece referência à tabela 'salesorderheader'.
+            description: Coluna com Foreign Key que estabelece referência à tabela 'salesorderheader' para informar dados de vendas.
 
       - name: salesreason  
         description: Tabela complementar à "salesorderheadersalesreason" com a descrição dos motivos de vendas das ordens de venda Adventure Works.
@@ -60,14 +54,11 @@ sources:
             description: Coluna com ID/chave primária dos motivos de venda.
             tests:
               - unique
-              - not_null
-              
+              - not_null            
           - name: name
             description: Coluna com a descrição do motivo de venda.
-
           - name: reasontype
             description: Coluna com a classificação/tipo de venda.
-
 
       - name: salesperson  
         description: Tabela com informações dos vendedores da Adventure Works.
@@ -85,14 +76,11 @@ sources:
             description: Coluna com ID/chave primária dos funcionários.
             tests:
               - unique
-              - not_null
-          
+              - not_null         
           - name: jobtitle
             description: Coluna com cargo dos funcionários.
-
           - name: gender
             description: Coluna com descrição do sexo dos funcionários.
-
           - name: hiredate
             description: Coluna com data de contratação dos funcionários.
 
@@ -104,7 +92,6 @@ sources:
             tests:
               - unique
               - not_null
-
           - name: cardtype
             description: Coluna com o tipo dos cartões de crédito.
 
@@ -116,16 +103,12 @@ sources:
             tests:
               - unique
               - not_null
-
           - name: name
             description: Coluna com a descrição do produto.
-
           - name: productnumber
             description: Coluna com o número do produto.
-
           - name: color
             description: Coluna com a cor do produto.
-
           - name: size
             description: Coluna com o tamanho do produto.
 
@@ -135,20 +118,16 @@ sources:
           - name: salesorderid
             description: Coluna com ID/chave primária das vendas.
             tests:
-              - not_null
-          
+              - not_null         
           - name: salesorderdetailid
             description: Coluna incremental com produto vendido.
             tests:
               - unique
               - not_null
-
           - name: orderqty
-            description: Quantidade de itens vendidos.
-          
+            description: Quantidade de itens vendidos.         
           - name: productid
-            description: Coluna com Foreign Key que estabelece referência à tabela 'products'.
-
+            description: Coluna com Foreign Key que estabelece referência à tabela 'products' para informar dados de produtos.
           - name: unitprice
             description: Coluna com preço unitário dos produtos.
       
@@ -160,49 +139,34 @@ sources:
             tests:
               - unique
               - not_null
-
           - name: customerid
-            description: Coluna com Foreign Key que estabelece referência à tabela 'customer' para informar dados do cliente.
-          
+            description: Coluna com Foreign Key que estabelece referência à tabela 'customer' para informar dados do cliente.         
           - name: salespersonid
             description: Coluna com Foreign Key que estabelece referência à tabela 'salesperson' para informar dados do vendedor.
-
           - name: territoryid
             description: Coluna com Foreign Key que estabelece referência à tabela 'territory' para informar dados da região.
-
           - name: billtoaddressid
             description: Coluna com Foreign Key que estabelece referência à tabela 'address' para informar endereço da conta.
-
           - name: shiptoaddressid
             description: Coluna com Foreign Key que estabelece referência à tabela 'address' para informar endereço de entrega.
-
           - name: shipmethodid
             description: Coluna com Foreign Key que estabelece referência à tabela 'shipmethod' para informar dados da entrega .
-
           - name: creditcardid
-            description: CColuna com Foreign Key que estabelece referência à tabela 'creditcard' para informar dados do cartão de crédito utilizado.
-          
+            description: CColuna com Foreign Key que estabelece referência à tabela 'creditcard' para informar dados do cartão de crédito utilizado.         
           - name: currencyrateid
             description: Coluna com Foreign Key que estabelece referência à tabela 'currencyrate' para informar dados de taxa de câmbio.
-
           - name: orderdate
             description: Coluna com informação de data de venda.
-
           - name: duedate
             description: Coluna com informação de data de vencimento.
-
           - name: shipdate
             description: Coluna com informação de data de envio do pedido.
-
           - name: subtotal
             description: Coluna com informação do total da ordem.
-
           - name: taxamt
             description: Coluna com informação de taxa da ordem.
-
           - name: freight
             description: Coluna com informação de peso dos produtos.
-
           - name: totaldue
             description: Coluna com informação do total devido.
           
@@ -214,13 +178,10 @@ sources:
             tests:
               - unique
               - not_null
-
           - name: stateprovinceid
-            description: Coluna com Foreign Key que estabelece referência à tabela 'stateprovince' para informar dados de estado (território).
-            
+            description: Coluna com Foreign Key que estabelece referência à tabela 'stateprovince' para informar dados de estado (território).           
           - name: addressline1
             description: Coluna com informação de endereços.
-
           - name: city
             description: Coluna com informação de cidades.
 
@@ -232,16 +193,12 @@ sources:
             tests:
               - unique
               - not_null
-
           - name: territoryid
             description: Coluna com Foreign Key que estabelece referência à tabela 'territory' para informar dados de território.
-
           - name: stateprovincecode
-            description: Coluna com código do estado.
-          
+            description: Coluna com código do estado.         
           - name: countryregioncode
             description: Coluna com código do país.
-
           - name: name
             description: Coluna com nome do estado.
           
@@ -253,7 +210,6 @@ sources:
             tests:
               - unique
               - not_null
-
           - name: name
             description: Coluna com nome dos países.
   
