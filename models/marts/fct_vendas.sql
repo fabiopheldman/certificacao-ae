@@ -97,7 +97,8 @@ WITH
             , *
         from joined_tabelas
     )
-
+    
 SELECT
     *
 FROM transformacoes
+
