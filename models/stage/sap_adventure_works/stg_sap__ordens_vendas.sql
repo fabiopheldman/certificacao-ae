@@ -17,7 +17,8 @@ WITH
             ,CAST(currencyrateid AS INT) AS id_taxa					
             ,CAST(orderdate AS DATETIME) AS data_venda			
             ,CAST(duedate AS DATETIME) AS data_vencimento		
-            ,CAST(shipdate AS DATETIME)	AS data_entrega			
+            ,CAST(shipdate AS DATETIME)	AS data_entrega
+            ,CAST(status AS INT) AS status_venda			
             ,CAST(subtotal AS DECIMAL) AS total_vendido
             ,CAST(taxamt AS DECIMAL) AS taxa_cambio
             ,CAST(freight AS DECIMAL) AS peso	

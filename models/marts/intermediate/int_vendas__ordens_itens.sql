@@ -25,7 +25,16 @@ WITH
             , itens.id_produto					
             , pedidos.data_venda			
             , pedidos.data_vencimento		
-            , pedidos.data_entrega			
+            , pedidos.data_entrega
+            , CASE 
+                WHEN pedidos.status_venda = 1 THEN 'processado'
+                WHEN pedidos.status_venda = 2 THEN 'aprovado'
+                WHEN pedidos.status_venda = 3 THEN 'em empera'
+                WHEN pedidos.status_venda = 4 THEN 'rejeitado'
+                WHEN pedidos.status_venda = 5 THEN 'enviado'
+                WHEN pedidos.status_venda = 6 THEN 'cancelado'
+                ELSE NULL
+            END AS status_venda
             , pedidos.total_vendido
             , pedidos.taxa_cambio
             , pedidos.peso	
