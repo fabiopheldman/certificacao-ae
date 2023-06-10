@@ -33,5 +33,13 @@ WITH
             ON estados.cod_pais = paises.cod_pais
     )
 
+    , sk AS (
+        SELECT
+            ROW_NUMBER() OVER (ORDER BY id_endereco) AS sk_endereco
+            , *
+        FROM join_tabelas
+    )
+
+
 SELECT *
-FROM join_tabelas
+FROM sk

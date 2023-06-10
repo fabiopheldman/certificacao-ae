@@ -1,0 +1,56 @@
+version: 2
+models:
+  - name: fct_vendas
+    description: Essa é a dimensão com dados de vendas.
+    columns:
+      - name: sk_venda
+        description: Coluna com chave surrogate key da tabela.
+        tests:
+          - unique
+          - not_null
+      - name: data_venda
+        description: Coluna com data da venda
+      - name: data_vencimento
+        description: Coluna com data de vencimento da fatura
+      - name: data_entrega
+        description: Coluna com data prevista para entrega da compra
+      - name: total_vendido
+        description: Coluna com o valor total da venda
+      - name: taxa_cambio
+        description: Coluna com a taxa cobrada pelo produto
+      - name: peso
+        description: Coluna com o peso dos produtos
+      - name: total_devido
+        description: Coluna com o total devido
+      - name: venda_quantidade
+        description: Coluna com a quantidade vendida
+      - name: preco_unitario
+        description: Coluna com o preço unitário do produto
+      - name: pessoa_nome
+        description: Coluna com o nome do cliente
+      - name: endereco
+        description: Coluna com o endereço do cliente
+      - name: cidade
+        description: Coluna com a cidade do cliente
+      - name: estado
+        description: Coluna com o estado do cliente
+      - name: pais
+        description: Coluna com o país do cliente
+      - name: motivo_venda
+        description: Coluna com o motivo de venda
+      - name: tipo_venda
+        description: Coluna com o tipo de venda
+      - name: produto_nome
+        description: Coluna com o produto vendido
+      - name: vendedor_nome
+        description: Coluna com o nome do vendedor
+      - name: tipo_cartao
+        description: Coluna com o tipo de cartão utilizado na venda
+        
+      
+
+
+
+
+
+

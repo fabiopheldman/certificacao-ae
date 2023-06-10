@@ -17,8 +17,8 @@ WITH
             , pedidos.id_cliente				
             , pedidos.id_vendedor			
             , pedidos.id_territorio				
-            , pedidos.id_conta_endereco				
-            , pedidos.id_entrega_endereco				
+            , pedidos.id_endereco_fatura				
+            , pedidos.id_endereco_entrega				
             , pedidos.id_entrega_info			
             , pedidos.id_cartao_credito
             , pedidos.id_taxa
@@ -40,3 +40,4 @@ WITH
 SELECT 
     *
 FROM join_pedido_itens
+ORDER BY id_ordem_venda ASC

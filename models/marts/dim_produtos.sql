@@ -15,5 +15,12 @@ WITH
         FROM stg_produtos AS produtos
     )
 
+    , sk AS (
+        SELECT
+            ROW_NUMBER() OVER (ORDER BY id_produto) AS sk_produto
+            , *
+        FROM transformar
+    )
+
 SELECT *
-FROM transformar
+FROM sk

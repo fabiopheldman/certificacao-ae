@@ -7,7 +7,7 @@ WITH
     , renomear AS (
         SELECT	
             CAST(creditcardid AS INT) AS id_cartao_credito
-            ,CAST(cardtype AS STRING) AS cartao_tipo
+            ,CAST(cardtype AS STRING) AS tipo_cartao
         FROM fonte_cartao_credito
     )
 
