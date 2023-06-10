@@ -52,7 +52,8 @@ WITH
             , vend.sk_vendedor AS fk_vendedor				
             , oi.data_venda			
             , oi.data_vencimento		
-            , oi.data_entrega			
+            , oi.data_entrega
+            , oi.status_venda			
             , oi.total_vendido
             , oi.taxa_cambio
             , oi.peso	
