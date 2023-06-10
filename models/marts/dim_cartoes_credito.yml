@@ -1,0 +1,12 @@
+version: 2
+models:
+  - name: dim_cartoes_credito
+    description: Essa é a dimensão com dados de cartão de crédito.
+    columns:
+      - name: id_cartao_credito
+        description: Coluna com chave primária da tabela que referencia o cartãod e crédito.
+        tests:
+          - unique
+          - not_null
+      - name: tipo_cartao
+        description: Coluna com o tipo do cartão de crédito.

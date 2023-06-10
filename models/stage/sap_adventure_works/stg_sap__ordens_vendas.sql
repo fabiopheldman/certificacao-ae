@@ -10,8 +10,8 @@ WITH
             ,CAST(customerid AS INT) AS id_cliente				
             ,CAST(salespersonid AS INT)	AS id_vendedor			
             ,CAST(territoryid AS INT) AS id_territorio				
-            ,CAST(billtoaddressid AS INT) AS id_conta_endereco				
-            ,CAST(shiptoaddressid AS INT) AS id_entrega_endereco				
+            ,CAST(billtoaddressid AS INT) AS id_endereco_fatura				
+            ,CAST(shiptoaddressid AS INT) AS id_endereco_entrega				
             ,CAST(shipmethodid AS INT) AS id_entrega_info			
             ,CAST(creditcardid AS INT) AS id_cartao_credito
             ,CAST(currencyrateid AS INT) AS id_taxa					

@@ -7,9 +7,9 @@ WITH
     , renomear AS (
         SELECT	
             CAST(salesorderid AS INT) AS id_ordem_venda
-            ,CAST(productid AS STRING) AS id_produto
-            ,CAST(orderqty AS STRING) AS venda_quantidade
-            ,CAST(unitprice AS STRING) AS preco_unitario
+            ,CAST(productid AS INT) AS id_produto
+            ,CAST(orderqty AS INT) AS venda_quantidade
+            ,CAST(unitprice AS DECIMAL) AS preco_unitario
         FROM fonte_produtos
     )
 

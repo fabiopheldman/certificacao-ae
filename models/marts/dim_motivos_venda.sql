@@ -13,7 +13,8 @@ WITH
 
     , join_tabelas AS (
         SELECT
-            omv.*
+            omv.id_ordem_venda
+            , omv.id_motivo_venda
             , mv.motivo_venda
             , mv.tipo_venda
         FROM stg_ordens_motivo_vendas AS omv
@@ -21,6 +22,13 @@ WITH
             ON omv.id_motivo_venda = mv.id_motivo_venda
     )
 
+    , sk AS (
+        SELECT
+            ROW_NUMBER() OVER (ORDER BY id_motivo_venda) AS sk_motivo_venda
+            , *
+        FROM join_tabelas
+    )
+
 SELECT *
-FROM join_tabelas
-ORDER BY join_tabelas.id_ordem_venda ASC
+FROM sk
+ORDER BY sk.id_ordem_venda ASC

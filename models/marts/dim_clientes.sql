@@ -24,5 +24,12 @@ WITH
             ON clientes.id_pessoa = pessoas.id_pessoa
     )
 
+    , sk AS (
+        SELECT
+            ROW_NUMBER() OVER (ORDER BY id_cliente) AS sk_cliente
+            , *
+        FROM join_tabelas
+    )
+
 SELECT *
-FROM join_tabelas
+FROM sk

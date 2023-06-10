@@ -38,5 +38,12 @@ WITH
             ON jtvf.id_funcionario = pess.id_pessoa
     )
 
+    , sk AS (
+        SELECT
+            ROW_NUMBER() OVER (ORDER BY id_vendedor) AS sk_vendedor
+            , *
+        FROM join_tabelas_vfp
+    )
+
 SELECT *
-FROM join_tabelas_vfp
+FROM sk
